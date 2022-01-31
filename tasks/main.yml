@@ -1,0 +1,11 @@
+---
+
+- name: clone attack navigator repository
+  become: true
+  ansible.builtin.git:
+    repo: "https://github.com/mitre-attack/attack-navigator.git"
+    dest: "{{ attack_navigator_deploy_dir }}"
+    update: no
+    single_branch: yes
+    version: gh-pages
+
